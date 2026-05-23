@@ -1,0 +1,34 @@
+/* =============================================
+   PitchFinder — Main Stylesheet
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap');
+
+/* ----- CSS Variables ----- */
+:root {
+    --green:       #a3e635;
+    --green-dark:  #84cc16;
+    --green-glow:  rgba(163, 230, 53, 0.35);
+    --bg-dark:     #060c10;
+    --bg-card:     rgba(255,255,255,0.04);
+    --border:      rgba(255,255,255,0.08);
+    --text-white:  #f1f5f9;
+    --text-muted:  #94a3b8;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body:    'Barlow', sans-serif;
+    --radius:      10px;
+    --transition:  0.25s ease;
+}
+
+/* ----- Reset ----- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }

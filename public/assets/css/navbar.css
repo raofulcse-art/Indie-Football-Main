@@ -1,0 +1,102 @@
+/* =============================================
+   Navbar
+   ============================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 2.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(6, 12, 16, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar__logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.navbar__logo-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #000;
+}
+
+.navbar__logo-text {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-white);
+}
+
+.navbar__logo-text span {
+    color: var(--green);
+}
+
+/* Auth buttons */
+.navbar__auth {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-login {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-white);
+    padding: 0.45rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    letter-spacing: 0.02em;
+}
+
+.btn-login:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.18);
+}
+
+.btn-register {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #000;
+    padding: 0.45rem 1.25rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--green);
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition);
+    letter-spacing: 0.03em;
+}
+
+.btn-register:hover {
+    background: var(--green-dark);
+    box-shadow: 0 0 18px var(--green-glow);
+}
