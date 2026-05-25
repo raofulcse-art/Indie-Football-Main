@@ -1,0 +1,39 @@
+.btn-content{
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #000;
+    padding: 1.4rem 2.75rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--green);
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition);
+    letter-spacing: 0.03em;
+}
+
+.btn-content:hover {
+    background: var(--green-dark);
+    box-shadow: 0 0 18px var(--green-glow);
+}
+.content-container{
+    margin-top: 500px;
+    margin: 0 auto;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contents{
+    /*background: red;*/
+    min-height: 337px;
+    width: 414px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;   /* enables line breaking */
+    gap: 20px;         /* spacing between buttons */
+}
