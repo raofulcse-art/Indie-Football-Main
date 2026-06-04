@@ -13,11 +13,13 @@ class ContentBtn extends Component
      */
     public string $route;
     public string $value;
-    public function __construct($route,$value)
+    public array $params;
+    public function __construct($route,$value, array $params=[])
     {
         //
         $this->route = $route;
         $this->value = $value;
+        $this->params = $params;
     }
 
     /**

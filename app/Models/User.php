@@ -61,4 +61,5 @@ class User extends Authenticatable
             ->where('team_id', $teamId)
             ->exists();
     }
+    
 }

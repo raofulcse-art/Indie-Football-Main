@@ -66,7 +66,8 @@
 
         </div>
 
-        <div class="profile-card danger-card">
+        @if(!auth()->user()->hasRole('admin'))
+            <div class="profile-card danger-card">
 
             <div class="profile-header">
                 <p class="profile-label danger-label">Danger Zone</p>
@@ -106,6 +107,7 @@
             </form>
 
         </div>
+        @endif
 
     </div>
 

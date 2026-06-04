@@ -4,13 +4,20 @@
     <div style="height: 1000px;" class="content-container">
         <div class="contents">
             @can('manage users')
-                <x-content-btn route="profile" value="Manage Users" />
+                <x-content-btn route="profile.edit" value="Manage Users" />
             @endcan
             @can('create team')
-                <x-content-btn route="teams.create" value="Create Team" />
+                @if(!auth()->user()->teamMembership()->exists())
+                    <x-content-btn route="teams.create" value="Create Team" />
+                @endif
             @endcan
             @can('view own team')
-                <x-content-btn route="profile" value="Your Team" />
+                @if(auth()->user()->teamMembership()->exists())
+                    @php
+                    $team = auth()->user()->team;
+                    @endphp
+                    <x-content-btn route="teams.show" :params="['team' => $team->id]" value="Your Team" />
+                @endif
             @endcan
             
             

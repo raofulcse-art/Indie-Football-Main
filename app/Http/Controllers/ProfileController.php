@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class ProfileController extends Controller
 {
@@ -42,6 +44,9 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        if(Auth::check() && Auth::user()->hasRole('admin')){
+            abort(403, 'Admins cannot delete their own account.');
+        }
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);
