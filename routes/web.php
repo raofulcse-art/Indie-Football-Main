@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserManagementController;
@@ -54,7 +55,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/users', function(){
             return view('admin/users');
         })->name('users');
-
+        Route::get('/users/{user}/edit',[UserController::class,'edit'])
+        ->name('users.edit');
+        Route::patch('/users/{user}', [UserController::class, 'update'])
+    ->name('users.update');
 
     });
 

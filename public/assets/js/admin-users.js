@@ -18,8 +18,12 @@ function renderUsers(users) {
                 <div class="user-email">${user.email}</div>
                 <div class="user-role user-role--admin">${user.role}</div>
                 <div class="user-actions">
-                    <button class="btn-icon btn-edit">✎</button>
-                    <button class="btn-icon btn-delete">🗑</button>
+                     <a href="/admin/users/${user.id}/edit" class="btn-icon btn-edit">
+                    ✎
+                </a>
+                    <a href="/admin/users/${user.id}/edit"class="btn-icon btn-edit">
+                    🗑
+                </a>
                 </div>
             </div>
         `;
