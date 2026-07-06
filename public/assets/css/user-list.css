@@ -1,0 +1,224 @@
+/* =============================================
+   User List — Container & Rows
+   ============================================= */
+
+.user-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 960px;
+    min-height: 1000px;
+}
+
+.user-row {
+    display: grid;
+    grid-template-columns: 2.5fr 2fr 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.user-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Identity cell */
+.user-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(163, 230, 53, 0.1);
+    border: 1px solid rgba(163, 230, 53, 0.25);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.user-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Email cell */
+.user-email {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Role cell */
+.user-role {
+    justify-self: start;
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-white);
+    white-space: nowrap;
+}
+
+.user-role--admin {
+    background: rgba(163, 230, 53, 0.08);
+    border-color: rgba(163, 230, 53, 0.25);
+    color: var(--green);
+}
+
+/* Actions cell */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: end;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+    flex-shrink: 0;
+}
+
+.btn-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-white);
+    fill: none;
+}
+
+.btn-edit:hover {
+    border-color: rgba(163, 230, 53, 0.4);
+    background: rgba(163, 230, 53, 0.08);
+    box-shadow: 0 0 14px var(--green-glow);
+}
+
+.btn-edit:hover svg { stroke: var(--green); }
+
+.btn-delete:hover {
+    border-color: rgba(239, 68, 68, 0.45);
+    background: rgba(239, 68, 68, 0.12);
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.25);
+}
+
+.btn-delete:hover svg { stroke: #fca5a5; }
+
+/* Empty state */
+.user-list-empty {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+/* =============================================
+   Pagination — Prev / Next
+   ============================================= */
+
+.user-list-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.pagination-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    flex-shrink: 0;
+}
+
+.pagination-btn:hover {
+    border-color: rgba(163, 230, 53, 0.4);
+    background: rgba(163, 230, 53, 0.08);
+    box-shadow: 0 0 14px var(--green-glow);
+    color: var(--green);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border);
+}
+
+.invinsible{
+    display: none;
+}
+/* Responsive */
+@media (max-width: 720px) {
+    .user-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .user-role { justify-self: start; }
+
+    .user-actions {
+        justify-self: start;
+        margin-top: 0.25rem;
+    }
+}

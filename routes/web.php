@@ -49,8 +49,13 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
-        Route::get('/users', [UserManagementController::class, 'index'])->name('users.index');
-        Route::delete('/users/{user}', [UserManagementController::class, 'destroy'])->name('users.destroy');
+        //Route::get('/users', [UserManagementController::class, 'index'])->name('users.index');
+        //Route::delete('/users/{user}', [UserManagementController::class, 'destroy'])->name('users.destroy');
+        Route::get('/users', function(){
+            return view('admin/users');
+        })->name('users');
+
+
     });
 
     Route::middleware(['role:player|admin'])->group(function () {

@@ -4,7 +4,7 @@
     <div style="height: 1000px;" class="content-container">
         <div class="contents">
             @can('manage users')
-                <x-content-btn route="profile.edit" value="Manage Users" />
+                <x-content-btn route="admin.users" value="Manage Users" />
             @endcan
             @can('create team')
                 @if(!auth()->user()->teamMembership()->exists())
