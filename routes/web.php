@@ -59,6 +59,8 @@ Route::middleware(['auth'])->group(function () {
         ->name('users.edit');
         Route::patch('/users/{user}', [UserController::class, 'update'])
     ->name('users.update');
+    Route::delete('/users/{user}/delete',[UserController::class,'destroy'])
+    ->name('users.delete');
 
     });
 

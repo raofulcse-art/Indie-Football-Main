@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/content.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/user-list.css') }}" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Slot for extra head content (additional page-level styles, meta tags, etc.) --}}
     {{ $head ?? '' }}
 </head>

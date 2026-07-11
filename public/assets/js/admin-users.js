@@ -21,10 +21,12 @@ function renderUsers(users) {
                      <a href="/admin/users/${user.id}/edit" class="btn-icon btn-edit">
                     ✎
                 </a>
-                    <a href="/admin/users/${user.id}/edit"class="btn-icon btn-edit">
-                    🗑
-                </a>
+        
+                    <button class="btn-icon btn-edit" onclick="deleteUser(${user.id})">
+    🗑
+</button>
                 </div>
+                
             </div>
         `;
     });
@@ -82,4 +84,18 @@ function prevPage() {
     if (currentPage > 1) {
         loadUsers(currentPage - 1);
     }
+} 
+
+async function deleteUser(id) {
+    await fetch(`/admin/users/${id}/delete`, {
+        method: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': document
+                .querySelector('meta[name="csrf-token"]')
+                .content,
+            'Accept': 'application/json'
+        }
+    });
+
+    loadUsers();
 }
