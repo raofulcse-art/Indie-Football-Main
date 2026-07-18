@@ -1,0 +1,405 @@
+/* =============================================
+   Team Search Page
+   ============================================= */
+
+.team-search-page {
+    min-height: 100vh;
+    padding: 120px 1.5rem 60px;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-dark);
+}
+
+.team-search-card {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =============================================
+   Header
+   ============================================= */
+
+.team-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.team-search-label {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.team-search-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--text-white);
+}
+
+.team-search-subtitle {
+    max-width: 550px;
+    margin-top: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* =============================================
+   Search
+   ============================================= */
+
+.team-search-toolbar {
+    margin-bottom: 2rem;
+}
+
+.team-search-input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.team-search-input-wrapper:focus-within {
+    border-color: rgba(163, 230, 53, 0.5);
+    background: rgba(163, 230, 53, 0.04);
+    box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.08);
+}
+
+.team-search-input-wrapper svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--text-muted);
+}
+
+.team-search-input-wrapper input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-white);
+}
+
+.team-search-input-wrapper input::placeholder {
+    color: rgba(148, 163, 184, 0.45);
+}
+
+/* Removes the default browser search clear styling */
+
+.team-search-input-wrapper input::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+/* =============================================
+   Column Headings
+   ============================================= */
+
+.team-list-headings {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.25rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* =============================================
+   Team List
+   ============================================= */
+
+.team-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.team-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+}
+
+.team-row:hover {
+    border-color: rgba(163, 230, 53, 0.22);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+}
+
+/* =============================================
+   Team Identity
+   ============================================= */
+
+.team-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.team-avatar {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(163, 230, 53, 0.25);
+    background: rgba(163, 230, 53, 0.1);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.team-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+/* =============================================
+   Team Information
+   ============================================= */
+
+.team-id {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.team-member-count {
+    justify-self: start;
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.06);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-white);
+    white-space: nowrap;
+}
+
+.team-actions {
+    justify-self: end;
+}
+
+/* =============================================
+   Show Button
+   ============================================= */
+
+.team-show-button {
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(163, 230, 53, 0.3);
+    background: rgba(163, 230, 53, 0.08);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--green);
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.team-show-button:hover {
+    border-color: rgba(163, 230, 53, 0.5);
+    background: rgba(163, 230, 53, 0.14);
+    box-shadow: 0 0 14px var(--green-glow);
+}
+
+/* =============================================
+   Messages
+   ============================================= */
+
+.team-list-message {
+    padding: 3rem 1.5rem;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* =============================================
+   Pagination
+   ============================================= */
+
+.team-list-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        color var(--transition);
+}
+
+.pagination-btn:hover {
+    border-color: rgba(163, 230, 53, 0.4);
+    background: rgba(163, 230, 53, 0.08);
+    box-shadow: 0 0 14px var(--green-glow);
+    color: var(--green);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.team-page-number {
+    min-width: 100px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.team-page-number span {
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.invinsible {
+    display: none;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 720px) {
+    .team-search-card {
+        padding: 1.5rem;
+    }
+
+    .team-search-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .team-list-headings {
+        display: none;
+    }
+
+    .team-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .team-member-count {
+        justify-self: start;
+    }
+
+    .team-actions {
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    .team-show-button {
+        width: 100%;
+    }
+
+    .team-list-pagination {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-search-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .team-search-card {
+        padding: 1.25rem;
+    }
+
+    .team-search-title {
+        font-size: 2.5rem;
+    }
+
+    .team-list-pagination {
+        flex-direction: column;
+    }
+
+    .pagination-btn {
+        width: 100%;
+    }
+}

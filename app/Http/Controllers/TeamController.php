@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTeamRequest;
+use App\Http\Resources\TeamResource;
 use App\Models\Team;
 use App\Models\TeamMember;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,9 @@ class TeamController extends Controller
     public function create()
     {
         return view('teams.create');
+    }
+    public function search(){
+        return view('teams.search');
     }
 
     public function store(StoreTeamRequest $request)
@@ -49,5 +53,10 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         return view('teams.show', compact('team'));
+    } 
+    public function index(){
+        $teams = Team::paginate(15);
+
+        return TeamResource::collection($teams);
     }
 }

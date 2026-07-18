@@ -88,6 +88,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/teams/{team}/invites', [TeamInviteController::class, 'store'])
             ->middleware('team.captain')
             ->name('teams.invites.store');
+        Route::get('/teamlist',[TeamController::class,'search'])
+        ->name('teams.list');
     });
 });
 
@@ -104,5 +106,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teams/{team}', [TeamController::class, 'show'])
         ->name('teams.show');
 });
+
 
 require __DIR__.'/auth.php';

@@ -19,7 +19,7 @@
                     <x-content-btn route="teams.show" :params="['team' => $team->id]" value="Your Team" />
                 @endif
             @endcan
-            
+            <x-content-btn route="teams.list" value="Search Team" />
             
         </div>
     </div>
