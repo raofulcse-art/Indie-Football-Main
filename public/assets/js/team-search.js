@@ -141,7 +141,7 @@ async function loadTeams(page = 1) {
 
     try {
         const response = await fetch(
-            `/api/teams?${queryParameters.toString()}`,
+            `/api/teamlist?${queryParameters.toString()}`,
             {
                 method: "GET",
                 headers: {
